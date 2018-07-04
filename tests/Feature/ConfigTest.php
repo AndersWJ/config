@@ -3,7 +3,6 @@
 namespace Tests\Feature;
 
 use Exception;
-use PHPUnit\Framework\Constraint\IsTrue;
 use RuntimeException;
 use Awj\Config\Config;
 use PHPUnit\Framework\TestCase;
@@ -50,6 +49,4 @@ class ConfigTest extends TestCase
 
         $this->assertEquals('someValue', Config::read('someKey'));
     }
-
-
 }

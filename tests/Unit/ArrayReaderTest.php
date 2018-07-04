@@ -84,4 +84,12 @@ class ArrayReaderTest extends TestCase
             'key' => 'value'
         ], $reader->get('config'));
     }
+
+    /** @test */
+    public function it_returns_a_default_value_if_key_is_not_found()
+    {
+        $reader = new ArrayReader(vfsStream::url('configPath'));
+
+        $this->assertEquals('defaultValue', $reader->get('config.wrong.key', 'defaultValue'));
+    }
 }
